@@ -1,0 +1,191 @@
+========================================================================================================================
+"Information general", "IOC", "AOP"":
+        https://www.youtube.com/watch?v=M4w6b2pENWU&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=1
+
+Package:
+========================================================================================================================
+"OOP", "Using interfaces", "IOC":
+        https://www.youtube.com/watch?v=NtmWlg1YMsE&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=5
+
+Package: ioc, not_ioc
+========================================================================================================================
+"Conversion project to Spring", "Customize Spring container", "Object binding", "Customize XML properties":
+        https://www.youtube.com/watch?v=rFUayDA0r9Q&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=7
+
+Package: robot_spring
+========================================================================================================================
+"Using Constructor"
+        https://www.youtube.com/watch?v=xtBUoQnsJFg&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=8
+
+Package: robot_spring_2
+========================================================================================================================
+"Using setters"
+        https://www.youtube.com/watch?v=pVGoRR6FDiw&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=9
+
+Package: robot_spring_3
+========================================================================================================================
+"IOC", "Service Locator", "Dependency Injection"
+        https://www.youtube.com/watch?v=kitf6o1hfyc&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=10
+
+Package: not package
+========================================================================================================================
+"BeanFactory", "ApplicationContext", "property", "constructor-arg", "p:namespace", "c:namespace"
+        https://www.youtube.com/watch?v=-hOj-xnPBCY&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=11
+
+Package: robot_spring_4
+========================================================================================================================
+"Bean Scope", "Singleton(Default)", "Prototype", "init-method", "destroy-method", "default-int-method", "default-destroy-method",
+"InitializingBean", "DisposableBean", "BeanPostProcessor", "lazy-init", "default-lazy-init"
+        https://www.youtube.com/watch?v=YdqMEkdiEfw&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=12
+        https://www.youtube.com/watch?v=Hw6Ueg753gU&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=13
+
+Package: robot_spring_5
+========================================================================================================================
+"Splitting XML Files", "separation of files", "import configuration file"
+        https://www.youtube.com/watch?v=YqPO8y6OP_4&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=14
+
+Package: robot_spring_6
+========================================================================================================================
+"Initialization sequence", "object creation sequence", "binding objects without constructors and setters",
+"attribute depends-on"
+        https://www.youtube.com/watch?v=C2WSMRBae7Q&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=15
+
+Package: robot_spring_6
+========================================================================================================================
+"Bean Inheritance", "reduction XML-configurations", "property override", "creation of abstract beans", "teg parent",
+"teg abstract"
+        https://www.youtube.com/watch?v=4JPIpeUherw&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=16
+
+Package: robot_spring_7
+========================================================================================================================
+"Proxy", "JDK Dynamic Proxy", "Static Proxy", "Reflection", "byte code manipulation", "cglib"
+        https://www.youtube.com/watch?v=rNLfxOCyEZw&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=17
+
+Package: not package
+========================================================================================================================
+"Constructor injection", "Setter  injection", "Method injection", "tag lookup-method", "tag replaced-method",
+"Abstract Factory", "Factory Method", "interface MethodReplacer"
+        https://www.youtube.com/watch?v=Tts6HVYSHCI&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=18
+        https://www.youtube.com/watch?v=gKL23rJAVdM&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=19
+
+Package: robot_spring_8
+========================================================================================================================
+"Collections", "List", "Set", "Map", "Property", "Inject empty value null"
+        https://www.youtube.com/watch?v=AZtf9IwTJ10&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=20
+        https://www.youtube.com/watch?v=2LzAD6FVR60&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=21
+
+Package: robot_spring_9
+========================================================================================================================
+'Language expression SpEL(Spring Expression Language)', 'SpEL expression syntax',
+'dynamic injection object at runtime', 'analogy with JSF EL'
+        https://www.youtube.com/watch?v=5N4XX-wXEuI&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=22
+
+Package: robot_spring_10
+========================================================================================================================
+'concept autowiring', 'attribute autowire' 'Spring container and interface ApplicationContext'
+        https://www.youtube.com/watch?v=DMNw1adJDnA&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=23
+
+Package: robot_spring_11
+========================================================================================================================
+'Annotation', 'Annotations Spring Container', '<context:annotation-config/>',
+'@Required', '@Autowire', 'Qualifier', '<qualifier value=''/>'
+        https://www.youtube.com/watch?v=yS7ILn21Png&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=24
+
+Package: robot_spring_12
+========================================================================================================================
+'Auto scan components Spring', 'Excluding tag Bean', '<context:component-scan base-package=''/>', '@Component',
+'Bean', 'Scope', 'Autowire', 'Qualifier'
+        https://www.youtube.com/watch?v=DUk5_T9w0d0&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=25
+
+Package: robot_spring_13
+Homework  --> true
+========================================================================================================================
+'Standard annotations  Java', 'Difference between standard annotations Java and Spring annotations'
+'Standard annotations Java: Resource, Inject, Named',
+'Spring annotations: Component, Repository, Controller, Service, Resource, Inject, Autowire'
+'jar file javax.inject', '<context:annotation-config/>', '<context:component-scan base-package=''/>',
+'Reference Implementation (RI)', 'JSR-330', 'JSR-299', 'JSR-250', '@PostConstructor', 'PreDestroy'
+        https://www.youtube.com/watch?v=f4cqOhXoX3s&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=26
+
+Package: not package
+Homework  -->  true
+========================================================================================================================
+'Configuration Spring without ApplicationContext.xml', 'Configuration Spring with ApplicationConfig.java',
+'AnnotationConfigApplicationContext class'
+        not url source
+
+Package: robot_spring_13_a
+Homework  -->  false
+========================================================================================================================
+'Spring code example', 'IBM learning project review', 'Swing + Spring IOC'
+        https://www.youtube.com/watch?v=uoLNFHxR-2Q&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=27
+        https://www.ibm.com/developerworks/java/tutorials/j-springswing/j-springswing.html
+
+Package: ibm_todo_app, ibm_todo_app_2
+Homework  --> true
+========================================================================================================================
+'AOP(Aspect Oriented Programming)', 'AspectJ',
+        https://www.youtube.com/watch?v=FbOUzfSgLPQ&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=28
+        https://www.youtube.com/watch?v=W2KqNmWTQgo&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=29
+
+Package: spring_aop_24
+Homework  --> true
+Homework done --> true
+========================================================================================================================
+'Aspect', 'Advice', 'Join Point', 'Pointcut', 'Before', 'After', 'After Returning', 'After Throwing', 'Around advice',
+'Weaving', 'Compile time', 'Load time', 'Runtime(using in Spring)'
+        https://www.youtube.com/watch?v=QChU3CsLasA&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=30
+
+Package: not package
+Homework  --> true
+Homework done --> false
+========================================================================================================================
+
+        https://www.youtube.com/watch?v=VCV8yhuIpVs&list=PLwwk4BHih4fho6gmaAwdHYZ6QQq0aE7Zi&index=31
+
+Package: not package
+Homework  --> true
+Homework done --> false
+========================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

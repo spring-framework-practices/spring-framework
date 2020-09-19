@@ -1,0 +1,29 @@
+<html>
+<head><title>Login Page</title></head>
+<body onload='document.f.j_username.focus();'>
+<h3>Login with Username and Password</h3>
+<form action='/Spitter/j_spring_security_check' method='POST'
+      name='f'><!--<co id="co_securityCheck"/>-->
+    <table>
+        <tr>
+            <td>User:</td>
+            <td>
+                <input name='j_username' type='text' value=''><!--<co id="co_jUsername"/>-->
+            </td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>
+                <input name='j_password' type='password'/><!--<co id="co_jPassword"/>-->
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2'><input name="submit" type="submit"/></td>
+        </tr>
+        <tr>
+            <td colspan='2'><input name="reset" type="reset"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

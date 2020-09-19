@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+
+       default-lazy-init="true"
+>
+
+    <import resource="t1000_context.xml"/>
+
+    <bean class="com.trl.main.MyBeanPostProcessor"/>
+
+    <bean id="t1000Conveyor" class="com.trl.impls.conveyor.T1000Conveyor">
+        <lookup-method name="createRobot" bean="t1000"/>
+    </bean>
+
+    <!--
+    Zdes dlya peredachi znachenii ispolzyetsa List
+    -->
+    <bean id="t1000List" class="com.trl.impls.pool.T1000List">
+        <property name="robotList">
+            <list>
+                <!--
+                Mozno peredavat tak, yze sizdanui bean
+                -->
+                <ref bean="t1000"/>
+
+                <!--
+                Mozno peredavat tak, sizdavaia tyt ze bean
+                -->
+                <bean class="com.trl.impls.robot.ModelT1000"
+                      parent="baseModel"
+                >
+
+                    <constructor-arg value="gold" index="3" type="java.lang.String"/>
+                    <constructor-arg value="2007" index="4" type="int"/>
+                    <constructor-arg value="false" index="5" type="boolean"/>
+                </bean>
+
+                <bean class="com.trl.impls.robot.ModelT1000"
+                      parent="baseModel"
+                >
+
+                    <constructor-arg value="gold" index="3" type="java.lang.String"/>
+                    <constructor-arg value="2007" index="4" type="int"/>
+                    <constructor-arg value="false" index="5" type="boolean"/>
+                </bean>
+
+                <!--
+                Tak mozno ykazuvat null znachenie. Eto znachenie mozno stavit hde nyzna
+                -->
+<!--                <null/>-->
+
+            </list>
+        </property>
+
+    </bean>
+
+    <!--
+    Zdes dlya peredachi znachenii ispolzyetsa Map
+    -->
+    <bean id="t1000Map" class="com.trl.impls.pool.T1000Map">
+        <constructor-arg name="robotMap">
+            <map>
+                <entry key="2005" value-ref="t1000" />
+                <entry key="2006" value-ref="t1000" />
+                <entry key="2007">
+                    <bean class="com.trl.impls.robot.ModelT1000"
+                          parent="baseModel">
+
+                        <constructor-arg value="gold" index="3" type="java.lang.String" />
+                        <constructor-arg value="2007" index="4" type="int" />
+                        <constructor-arg value="false" index="5" type="boolean" />
+                    </bean>
+                </entry>
+
+            </map>
+        </constructor-arg>
+
+    </bean>
+
+</beans>

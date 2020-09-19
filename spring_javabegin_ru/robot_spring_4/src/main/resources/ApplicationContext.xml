@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="t1000_A" class="com.trl.impls.robot.ModelT1000">
+
+        <!--
+        Esli ykazivat v takoi manere to zdes ochen vazen poriadok parametrov,
+        esli ne soblydat poriadok parametrov to viletet error
+        -->
+        <constructor-arg value="silver"/>
+        <constructor-arg value="2019"/>
+        <constructor-arg value="true"/>
+
+        <constructor-arg name="head" ref="sonyHead"/>
+        <constructor-arg name="hand" ref="sonyHand"/>
+        <constructor-arg name="leg" ref="sonyLeg"/>
+
+    </bean>
+
+    <bean id="t1000_B" class="com.trl.impls.robot.ModelT1000">
+
+        <!--
+        A v etom premere yze ne vazen poriadok parametrov, potomy chto zdes ykazuvaetsa
+        indeks pozucii parametra. No zelatelno stavit v pravelnom poriadke sledovania
+        parametrov chtobu ne ysloznat chtenie koda
+        -->
+        <constructor-arg value="silver" index="3"/>
+        <constructor-arg value="true" index="5"/>
+        <constructor-arg value="2019" index="4"/>
+
+        <constructor-arg name="head" ref="sonyHead"/>
+        <constructor-arg name="hand" ref="sonyHand"/>
+        <constructor-arg name="leg" ref="sonyLeg"/>
+
+    </bean>
+
+    <bean id="t1000_C" class="com.trl.impls.robot.ModelT1000">
+
+        <!--
+         A zdes ykazuvaetsa tip parametra, chtobu ne owibitsa s tipos parametra.
+         Zelatilno vsehda ykazvat tip parametra dlia ylydwenia chtenia i dlya conteiner.
+
+         Ochen vazno esli v parametre perdaotsa primitivnui tip to ne rasreshaetsa
+         peredavat etot ze  tip no v ssilochnom vide.
+         Nety zdes autoboksinha.
+         -->
+        <constructor-arg value="silver" index="3" type="java.lang.String"/>
+<!--        <constructor-arg value="true" index="5" type="java.lang.Boolean"/>     Bydet owibka -->
+        <constructor-arg value="true" index="5" type="boolean"/>
+<!--        <constructor-arg value="2019" index="4" type="java.lang.Integer"/>     Bydet owibka -->
+        <constructor-arg value="2019" index="4" type="int"/>
+
+        <constructor-arg name="head" ref="sonyHead"/>
+        <constructor-arg name="hand" ref="sonyHand"/>
+        <constructor-arg name="leg" ref="sonyLeg"/>
+
+    </bean>
+
+    <!--
+    Vse viwe perechislenie pozerania i yslovia dolznu soblydatsa va "constructor-arg" i v "property"
+    -->
+
+
+    <!--
+    Dlya yprowchenia napisania koda mozno vukorustovuvat namespase "p".
+    Etot namespace dlya property.
+    -->
+    <bean id="t1000_namespace_p" class="com.trl.impls.robot.ModelT1000"
+          p:head-ref="toshibaHead"
+          p:hand-ref="toshibaHand"
+          p:leg-ref="sonyLeg">
+
+        <constructor-arg value="silver" index="0" type="java.lang.String"/>
+        <constructor-arg value="2005" index="1" type="int"/>
+        <constructor-arg value="true" index="2" type="boolean"/>
+
+    </bean>
+
+    <!--
+    Dlya yprowchenia napisania koda mozno vukorustovuvat namespase "c"
+    Etot namespace dlya constructor-arg.
+    -->
+    <bean id="t1000_namespace_c" class="com.trl.impls.robot.ModelT1000"
+          c:head-ref="sonyHead"
+          c:hand-ref="sonyHand"
+          c:leg-ref="sonyLeg">
+
+        <property name="color" value="silver"/>
+        <property name="year" value="2019"/>
+        <property name="soundEnabled" value="true"/>
+
+    </bean>
+
+    <!--
+    Mozno viberat constryktoru s rasnumi parametrami kotorue opredilenu v klasse.
+    -->
+    <bean id="t1000" class="com.trl.impls.robot.ModelT1000">
+
+        <constructor-arg ref="sonyHand"/>
+        <constructor-arg ref="sonyLeg"/>
+        <constructor-arg ref="toshibaHead"/>
+
+    </bean>
+
+    <!--
+    Razrewaetsa sozdavat constructoru po umolchaniy.
+    No nado bit ostoroznum s vuzovom kakixto getterov etoho klasa.
+    -->
+    <bean id="t1000_Empty" class="com.trl.impls.robot.ModelT1000"/>
+
+
+
+    <bean id="sonyHand" class="com.trl.impls.sony.SonyHand"/>
+    <bean id="sonyHead" class="com.trl.impls.sony.SonyHead"/>
+    <bean id="sonyLeg" class="com.trl.impls.sony.SonyLeg"/>
+
+    <bean id="toshibaHand" class="com.trl.impls.toshiba.ToshibaHand"/>
+    <bean id="toshibaHead" class="com.trl.impls.toshiba.ToshibaHead"/>
+    <bean id="toshibaLeg" class="com.trl.impls.toshiba.ToshibaLeg"/>
+
+
+</beans>

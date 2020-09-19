@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+
+       default-lazy-init="true"
+>
+
+    <import resource="toshiba_context.xml"/>
+    <import resource="sony_context.xml"/>
+    <import resource="db_context.xml"/>
+
+
+
+    <!--
+    Zdes vukorudtovuetsa teg depends-on. Etot teh delaet chto bean t1000_DB zavisit ot bean databaseBean.
+    Eto znachit chto pered inicializaciei bean t1000_DB bydet snachala inicializirovan bean databaseBean
+    -->
+    <bean id="t1000_DB" class="com.trl.impls.robot.ModelT1000"
+          p:hand-ref="sonyHand" p:leg-ref="sonyLeg" p:head-ref="sonyHead"
+
+          depends-on="databaseBean"
+    >
+
+        <constructor-arg value="silver" index="0" type="java.lang.String"/>
+        <constructor-arg value="2005" index="1" type="int"/>
+        <constructor-arg value="true" index="2" type="boolean"/>
+
+    </bean>
+
+
+    <bean id="t1000_t1000Empty" class="com.trl.impls.robot.ModelT1000"
+          p:hand-ref="sonyHand" p:leg-ref="sonyLeg" p:head-ref="sonyHead"
+
+          depends-on="t1000Empty"
+    >
+
+        <constructor-arg value="silver" index="0" type="java.lang.String"/>
+        <constructor-arg value="2005" index="1" type="int"/>
+        <constructor-arg value="true" index="2" type="boolean"/>
+
+    </bean>
+
+
+    <bean id="t1000Empty" class="com.trl.impls.robot.ModelT1000">
+
+        <constructor-arg ref="sonyHand"/>
+        <constructor-arg ref="sonyLeg"/>
+        <constructor-arg ref="sonyHead"/>
+
+    </bean>
+
+
+</beans>

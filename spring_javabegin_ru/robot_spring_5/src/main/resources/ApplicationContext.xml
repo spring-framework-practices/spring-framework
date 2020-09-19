@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <!--
+       default-init-method="initObject"
+       default-destroy-method="destroyObject"
+
+       Method init i destroy mozno ukazat po umolchaniy. I eti methodu budut priminiatsa kovsem benam.
+       Nado nezabut sozdat eti methodu v klase. Esli eti methodu nebydyt sozdanu tohda nechho ne proizoidet
+
+       -->
+
+       <!--
+       default-lazy-init="true">
+
+       default-lazy-init="true" ispolzyetsa dlia toho chtobu ne inicializirovat bean cotorue ne ispolzyytsa.
+       Esli default-lazy-init="true" to bean bydyt sozdavatsa tolko tohda kohda ix vuzuvayt.
+       Esli default-lazy-init="true" to bean bydyt sozdavatsa vsehda daze esli eho ne ispolzyyt.
+
+       default-lazy-init="true" mozn ystanovit po umolchaniy dlia vsex beans.
+       -->
+
+
+    <bean id="t1000" class="com.trl.impls.robot.ModelT1000"
+          p:hand-ref="toshibaHand_singleton"
+          p:leg-ref="sonyLeg_singleton"
+          p:head-ref="sonyHead_singleton">
+
+        <constructor-arg value="silver" index="0" type="java.lang.String" />
+        <constructor-arg value="2005" index="1" type="int" />
+        <constructor-arg value="true" index="2" type="boolean" />
+
+    </bean>
+
+
+
+    <!--
+    Zdes v osnovnoho bean scope singleton eto oznachaet cho vsehda bydet vozvrawchatsa tot samui bean.
+    A bean na kotorui ssulaytsa imeet scope toze singleton.
+
+    Scope singleton stoit po ymolchaniy.
+    -->
+    <bean id="t1000_scope_singleton_singleton" class="com.trl.impls.robot.ModelT1000"
+          p:hand-ref="toshibaHand_singleton"
+          p:leg-ref="sonyLeg_singleton"
+          p:head-ref="sonyHead_singleton">
+
+        <constructor-arg value="silver" index="0" type="java.lang.String" />
+        <constructor-arg value="2005" index="1" type="int" />
+        <constructor-arg value="true" index="2" type="boolean" />
+
+    </bean>
+
+    <!--
+    Zdes v osnovnoho bean scope singleton eto oznachaet cho vsehda bydet vozvrawchatsa tot samui bean.
+    A bean na kotorui ssulaytsa imeet scope toze singleton.
+
+    ATTENTION !!! smotret raznicu mesdu singleton-prototype i prototype-singleton
+    -->
+    <bean id="t1000_scope_singleton_prototype" class="com.trl.impls.robot.ModelT1000"
+          p:hand-ref="toshibaHand_prototype"
+          p:leg-ref="sonyLeg_prototype"
+          p:head-ref="sonyHead_prototype">
+
+        <constructor-arg value="silver" index="0" type="java.lang.String" />
+        <constructor-arg value="2005" index="1" type="int" />
+        <constructor-arg value="true" index="2" type="boolean" />
+
+    </bean>
+
+
+
+    <!--
+    Zdes scope prototype eto oznachaet cho vsehda bydet vozvrawchatsa novo sozdanui bean.
+    Zdes toze bean na kotorue ssulautsa hlavnui bena imeyt scope prototype.
+
+    Zdes hlavnui bean imeet scope prototype.
+    A bean na kotorui ssulaytsa imeet scope toze prototype.
+    -->
+    <bean id="t1000_scope_prototype_prototype" class="com.trl.impls.robot.ModelT1000"
+          p:hand-ref="toshibaHand_prototype"
+          p:leg-ref="sonyLeg_prototype"
+          p:head-ref="sonyHead_prototype"
+
+          scope="prototype">
+
+        <constructor-arg value="silver" index="0" type="java.lang.String" />
+        <constructor-arg value="2005" index="1" type="int" />
+        <constructor-arg value="true" index="2" type="boolean" />
+
+    </bean>
+
+    <!--
+    Ochen vazno esli bean imeet ssulky na druhoi bean to etot bean dolzen toze imet scope prototype,
+    a esli bean na kotorui ssulautsa ne bydet imet scope prototype to budet vozvrawchatsa vsehda
+    totze samui bean.
+
+    Zdes hlavnui bean imeet scope prototype.
+    A bean na kotorui ssulaytsa imeet scope singleton
+
+    ATTENTION !!! smotret raznicu mesdu singleton-prototype i prototype-singleton
+    -->
+    <bean id="t1000_scope_prototype_singleton" class="com.trl.impls.robot.ModelT1000"
+          p:hand-ref="toshibaHand_singleton"
+          p:leg-ref="sonyLeg_singleton"
+          p:head-ref="sonyHead_singleton"
+
+          scope="prototype">
+
+        <constructor-arg value="silver" index="0" type="java.lang.String" />
+        <constructor-arg value="2005" index="1" type="int" />
+        <constructor-arg value="true" index="2" type="boolean" />
+
+    </bean>
+
+
+
+    <!--
+    init-method  nuzen dlia toho chtobu chtoto delat pered inicializaciei bean.
+    destroy-method nuzen dlia toho chtobu chtoto delat pered unichtozenies bean.
+
+    Nado nezabut sozdat eti methodu v klase. Esli eti methodu nebydyt sozdanu tohda nechho ne proizoidet
+
+    S pomowchy BeanPostProcessor delaetsa obrabotka konteinerom.
+    A s pomoshchy intefeisov i init-method i destroy-method idot obrabotka samim obiektom.
+    -->
+    <bean id="t1000_init_destroy" class="com.trl.impls.robot.ModelT1000"
+          p:hand-ref="toshibaHand_singleton"
+          p:leg-ref="sonyLeg_singleton"
+          p:head-ref="sonyHead_singleton"
+          init-method="initObject"
+          destroy-method="destroyObject">
+
+        <constructor-arg value="silver" index="0" type="java.lang.String" />
+        <constructor-arg value="2005" index="1" type="int" />
+        <constructor-arg value="true" index="2" type="boolean" />
+
+    </bean>
+
+    <!--
+    Sywchestvyet dva vida chtobu init i destroy bean, eto mozno zdelat v ApplicationContext.xml i
+    mozno zdelat spomowchy interfeisov "InitializingBean" i "DisposableBean" korotue implementet nuznui klas.
+
+    S pomowchy BeanPostProcessor delaetsa obrabotka konteinerom.
+    A s pomoshchy intefeisov i init-method i destroy-method idot obrabotka samim obiektom.
+    -->
+    <bean id="t1000_implementationsInterfaces_init_destroy" class="com.trl.impls.robot.ModelT1000_LiveCycle"
+          p:hand-ref="toshibaHand_singleton"
+          p:leg-ref="sonyLeg_singleton"
+          p:head-ref="sonyHead_singleton">
+
+        <constructor-arg value="silver" index="0" type="java.lang.String" />
+        <constructor-arg value="2005" index="1" type="int" />
+        <constructor-arg value="true" index="2" type="boolean" />
+
+    </bean>
+
+
+    <!--
+    lazy-init ispolzyetsa dlia toho chtobu ne inicializirovat bean cotorue ne ispolzyytsa.
+    Esli "lazy-init = true" to bean bydyt sozdavatsa tolko tohda kohda ix vuzuvayt.
+    Esli "lazy-init = false" to bean bydyt sozdavatsa vsehda daze esli eho ne ispolzyyt.
+    -->
+    <bean id="t1000_" class="com.trl.impls.robot.ModelT1000"
+          p:hand-ref="toshibaHand_singleton"
+          p:leg-ref="sonyLeg_singleton"
+          p:head-ref="sonyHead_singleton"
+          lazy-init="true">
+
+        <constructor-arg value="silver" index="0" type="java.lang.String" />
+        <constructor-arg value="2005" index="1" type="int" />
+        <constructor-arg value="true" index="2" type="boolean" />
+
+    </bean>
+
+
+
+    <!--
+    BeanPostProcessor bydet vuzivatsa pered kazdoi inicializaciei bean i pri kazdom ynichtozenie beana
+    S pomowchy BeanPostProcessor delaetsa obrabotka konteinerom.
+    A s pomoshchy intefeisov i init-method i destroy-method idot obrabotka samim obiektom.
+    -->
+    <bean class="com.trl.main.MyBeanPostProcessor"/>
+
+
+
+    <bean id="sonyHand_singleton" class="com.trl.impls.sony.SonyHand" />
+    <bean id="sonyHead_singleton" class="com.trl.impls.sony.SonyHead" />
+    <bean id="sonyLeg_singleton" class="com.trl.impls.sony.SonyLeg" />
+
+    <bean id="toshibaHand_singleton" class="com.trl.impls.toshiba.ToshibaHand" />
+    <bean id="toshibaHead_singleton" class="com.trl.impls.toshiba.ToshibaHead" />
+    <bean id="toshibaLeg_singleton" class="com.trl.impls.toshiba.ToshibaLeg" />
+
+
+
+    <bean id="sonyHand_prototype" class="com.trl.impls.sony.SonyHand" scope="prototype"/>
+    <bean id="sonyHead_prototype" class="com.trl.impls.sony.SonyHead" scope="prototype"/>
+    <bean id="sonyLeg_prototype" class="com.trl.impls.sony.SonyLeg" scope="prototype"/>
+
+    <bean id="toshibaHand_prototype" class="com.trl.impls.toshiba.ToshibaHand" scope="prototype"/>
+    <bean id="toshibaHead_prototype" class="com.trl.impls.toshiba.ToshibaHead" scope="prototype"/>
+    <bean id="toshibaLeg_prototype" class="com.trl.impls.toshiba.ToshibaLeg" scope="prototype"/>
+
+
+</beans>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.trl</groupId>
+        <artifactId>spring_in_action</artifactId>
+        <version>3.0.0</version>
+    </parent>
+
+    <artifactId>SpringPizza</artifactId>
+    <version>3.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Spring in Action Spring Idol (JavaConfig version)</name>
+    <url>http://www.manning.com/walls4</url>
+
+
+    <!--=================================================== Maven ===================================================-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>${java.version_8}</source>
+                    <target>${java.version_8}</target>
+                    <encoding>${sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+    <!--================================================= Properties ================================================-->
+    <properties>
+
+        <!--============ Spring Settings ============-->
+        <spring.group>org.springframework</spring.group>
+        <spring.version>5.1.5.RELEASE</spring.version>
+
+    </properties>
+
+
+
+    <!--================================================ Dependencies ===============================================-->
+    <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.directory.studio/org.apache.commons.lang -->
+        <dependency>
+            <groupId>org.apache.directory.studio</groupId>
+            <artifactId>org.apache.commons.lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.13</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>3.2.6.RELEASE</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.tuckey/urlrewritefilter -->
+        <dependency>
+            <groupId>org.tuckey</groupId>
+            <artifactId>urlrewritefilter</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.webflow/spring-binding -->
+        <dependency>
+            <groupId>org.springframework.webflow</groupId>
+            <artifactId>spring-binding</artifactId>
+            <version>2.2.1.RELEASE</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.webflow/spring-webflow -->
+        <dependency>
+            <groupId>org.springframework.webflow</groupId>
+            <artifactId>spring-webflow</artifactId>
+            <version>2.2.1.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${spring.group}</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+
+
+
+
+
+
+        <!--
+
+        [group: 'org.springframework', name: 'spring-web', version: '3.0.5.RELEASE'],
+
+
+
+            [group: 'org.springframework', name: 'spring-aspects', version: '3.0.5.RELEASE'],
+            [group: 'org.springframework.webflow', name: 'spring-webflow', version: '2.2.1.RELEASE'],
+            [group: 'org.springframework.webflow', name: 'spring-binding', version: '2.2.1.RELEASE'],
+            [group: 'org.aspectj', name: 'aspectjweaver', version: '1.6.6'],
+            [group: 'org.tuckey', name: 'urlrewritefilter', version:'3.1.0'],
+            [group: 'commons-lang', name: 'commons-lang', version: '2.4']
+            [group: 'org.springframework', name: 'spring-webmvc', version: '3.0.5.RELEASE'],
+            [group: 'log4j', name: 'log4j', version: '1.2.13'],
+
+        -->
+
+
+
+
+        <dependency>
+            <groupId>${spring.group}</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${spring.group}</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${spring.group}</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.6</version>
+            <scope>test</scope>
+        </dependency>
+
+
+    </dependencies>
+
+</project>

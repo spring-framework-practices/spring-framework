@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>LearnSpring_Core</artifactId>
+        <groupId>com.trl</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>spring_javabegin_ru</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>not_ioc</module>
+        <module>ioc</module>
+        <module>robot_spring</module>
+        <module>robot_spring_2</module>
+        <module>robot_spring_3</module>
+        <module>robot_spring_4</module>
+        <module>robot_spring_5</module>
+        <module>robot_spring_6</module>
+        <module>robot_spring_7</module>
+        <module>robot_spring_8</module>
+        <module>robot_spring_9</module>
+        <module>robot_spring_10</module>
+        <module>robot_spring_11</module>
+        <module>robot_spring_12</module>
+        <module>robot_spring_13</module>
+        <module>robot_spring_13_a</module>
+        <module>ibm_todo_app</module>
+        <module>ibm_todo_app_2</module>
+        <module>spring_aop_24</module>
+        <module>SpringAOP_26</module>
+        <module>spring_aop_26_hw</module>
+        <module>spring_aop_27</module>
+        <module>spring_aop_27_hw</module>
+        <module>spring_aop_28</module>
+        <module>spring_aop_28_hw</module>
+        <module>spring_aop_29</module>
+        <module>spring_jdbc_31</module>
+        <module>spring_jdbc_33</module>
+        <module>spring_jdbc_34</module>
+    </modules>
+
+
+
+    <properties>
+        <!--============ Maven Settings ============-->
+        <java.version_8>8</java.version_8>
+        <java.version_11>11</java.version_11>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>

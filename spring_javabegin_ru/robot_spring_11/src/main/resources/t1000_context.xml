@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+
+       default-lazy-init="true"
+>
+
+    <import resource="toshiba_context.xml"/>
+    <import resource="sony_context.xml"/>
+    <import resource="db_context.xml"/>
+
+    <!--
+    Autowire - eto aytomaticheskui pois bean v container dlia vnedrenia v dryhoi bean
+    Esli conteiner naidot bolshe odnoho i tohoze tipa bena to bydet error.
+    Chtobu isklychit bean iz automaticheskoho sviazevania nado ukazat "autowire-candidate="false"".
+    Ili ykazat po ymolchaiy "default-autowire="false""
+    Atribyte autowire ne nasledyetsa v dochernie bean
+    Esli v bean propesat parameter i zdelat bean autowire, to propisanui parameter bydet
+    hlavnee chm ystanovlenui s pomowchy autowire
+    -->
+    <bean id="t1000" class="com.trl.impls.robot.ModelT1000"
+          parent="baseModel"
+          scope="prototype"
+          autowire="byType"
+    />
+
+    <bean id="baseModel" class="com.trl.abstracts.robot.BaseModel" abstract="true"/>
+
+</beans>
